@@ -178,7 +178,7 @@ const AcademicsSectionContent = () => (
             <Card className="bg-slate-50 dark:bg-slate-900 border-none shadow-none">
               <CardContent className="pt-6">
                 <h4 className="font-semibold mb-3">
-                  Grade Point Average
+                  GPA
                 </h4>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
@@ -214,11 +214,11 @@ const AcademicsSectionContent = () => (
         </motion.div>
 
         <motion.div variants={fadeIn}>
-          <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-slate-50">Relevant Coursework</h3>
+          <h3 className="text-lg font-semibold mb-4 text-slate-900 dark:text-slate-50">Coursework</h3>
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Advanced Placement</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">AP Courses</span>
                 <Separator className="flex-1" />
               </div>
               <div className="flex flex-wrap gap-2">
