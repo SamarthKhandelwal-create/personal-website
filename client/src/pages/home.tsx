@@ -98,7 +98,6 @@ const MobileHeader = () => {
           <div className="flex flex-col h-full">
             <div className="mb-8">
               <h2 className="text-xl font-bold">Samarth Khandelwal</h2>
-              <p className="text-sm text-muted-foreground">Engineering, CS, & AI</p>
             </div>
             <Navigation mobile onItemClick={() => {}} />
           </div>
@@ -239,7 +238,10 @@ const ProjectsSection = () => {
       description: "Led a team developing a multimodal AI system that processes real-time social media data to generate concise summaries for emergency responders.",
       tech: ["Transformers", "NLP", "Computer Vision", "GPT-4o mini", "BERTScore 0.78"],
       awards: ["Most Impactful Research Project (1st of 6 teams)", "Leadership Prestige Award"],
-      context: "UC AI Research Internship"
+      context: "UC AI Research Internship",
+      links: [
+        { name: "Research Poster", url: "/attached_assets/ExLAI_Poster_1767460245154.pdf" }
+      ]
     },
     {
       title: "Glioblastoma Research: ceRNA Networks via RGCN",
@@ -292,6 +294,23 @@ const ProjectsSection = () => {
                   </div>
                 )}
 
+                {project.links && (
+                  <div className="mb-4 flex gap-3">
+                    {project.links.map((link, i) => (
+                      <a 
+                        key={i} 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                      >
+                        <FileText className="w-3.5 h-3.5" />
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map(t => (
                     <span key={t} className="text-xs font-mono text-slate-500 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">
@@ -333,7 +352,7 @@ const CommunitySection = () => (
           {
             title: "Leukemia & Lymphoma Society",
             role: "Social Media Manager",
-            desc: "Co-managed a campaign raising over $75,000 for cancer research."
+            desc: "Co-managed a campaign raising over $75,000 for leukemia research."
           },
           {
             title: "Kumon Math & Reading Center",
@@ -500,7 +519,7 @@ const ResumeSection = () => (
       <Button 
         size="lg" 
         className="gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8"
-        onClick={() => window.open("/resume.pdf", "_blank")}
+        onClick={() => window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767460225537.pdf", "_blank")}
       >
         <Download className="w-5 h-5" />
         Download Resume
@@ -522,7 +541,6 @@ export default function Home() {
           <div className="flex items-center justify-between gap-4">
             <div className="flex flex-col">
               <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Samarth Khandelwal</h1>
-              <p className="text-xs md:text-sm text-primary font-medium">Engineering, CS, & AI</p>
             </div>
             
             <div className="hidden lg:block">
@@ -540,7 +558,6 @@ export default function Home() {
                   <div className="flex flex-col h-full">
                     <div className="mb-8">
                       <h2 className="text-xl font-bold">Samarth Khandelwal</h2>
-                      <p className="text-sm text-muted-foreground">Engineering, CS, & AI</p>
                     </div>
                     <Navigation mobile onItemClick={() => {}} />
                   </div>
