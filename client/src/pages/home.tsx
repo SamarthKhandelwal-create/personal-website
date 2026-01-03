@@ -762,7 +762,7 @@ export default function Home() {
                 <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="text-slate-400 hover:text-white hover:scale-110 transition-all">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-white hover:scale-110 transition-all">
+                <a href="https://www.linkedin.com/in/samarth-khandelwal-130715308/" target="_blank" className="text-slate-400 hover:text-white hover:scale-110 transition-all">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
