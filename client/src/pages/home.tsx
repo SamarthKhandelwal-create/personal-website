@@ -157,8 +157,7 @@ const AcademicsSection = () => (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <Card className="bg-slate-50 dark:bg-slate-900 border-none shadow-none">
               <CardContent className="pt-6">
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <h4 className="font-semibold mb-3">
                   Grade Point Average
                 </h4>
                 <div className="space-y-2">
@@ -176,8 +175,7 @@ const AcademicsSection = () => (
 
             <Card className="bg-slate-50 dark:bg-slate-900 border-none shadow-none">
               <CardContent className="pt-6">
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <h4 className="font-semibold mb-3">
                   SAT Score
                 </h4>
                 <div className="space-y-1">
