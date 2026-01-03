@@ -48,16 +48,16 @@ const staggerContainer = {
   }
 };
 
-// --- Sidebar / Navigation ---
+// --- Navigation ---
 
 const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemClick?: () => void }) => {
   const links = [
-    { name: "About", id: "about", icon: <Users className="w-4 h-4" /> },
-    { name: "Academics", id: "academics", icon: <GraduationCap className="w-4 h-4" /> },
-    { name: "Projects", id: "projects", icon: <Code2 className="w-4 h-4" /> },
-    { name: "Community", id: "community", icon: <Users className="w-4 h-4" /> },
-    { name: "Contact", id: "contact", icon: <MessageSquare className="w-4 h-4" /> },
-    { name: "Resume", id: "resume", icon: <FileText className="w-4 h-4" /> },
+    { name: "About", id: "about" },
+    { name: "Academics", id: "academics" },
+    { name: "Projects", id: "projects" },
+    { name: "Community", id: "community" },
+    { name: "Contact", id: "contact" },
+    { name: "Resume", id: "resume" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -69,57 +69,18 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
   };
 
   return (
-    <nav className={`flex ${mobile ? "flex-col space-y-4" : "flex-col space-y-2"} w-full`}>
+    <nav className={`flex ${mobile ? "flex-col space-y-4" : "items-center gap-1"}`}>
       {links.map((link) => (
         <button
           key={link.name}
           onClick={() => scrollToSection(link.id)}
-          className={`flex items-center gap-3 px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-left group`}
+          className={`px-3 py-1.5 text-sm font-medium transition-colors rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary whitespace-nowrap`}
           data-testid={`nav-${link.id}`}
         >
-          <span className="text-slate-400 group-hover:text-primary transition-colors">{link.icon}</span>
           {link.name}
         </button>
       ))}
     </nav>
-  );
-};
-
-const Sidebar = () => {
-  return (
-    <div className="h-screen sticky top-0 flex flex-col justify-between p-8 border-r border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 backdrop-blur-sm">
-      <div className="space-y-8">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Samarth Khandelwal</h1>
-          <p className="mt-2 text-lg text-primary font-medium">High School Student</p>
-          <p className="text-sm text-slate-500 dark:text-slate-400">Engineering, Computer Science, AI</p>
-          
-          <div className="mt-6 space-y-4 text-sm text-slate-600 dark:text-slate-400">
-            <p className="leading-relaxed font-medium">
-              Building transformer models for disaster relief and applying deep learning to bioinformatics.
-            </p>
-            <div className="flex items-center gap-2 text-slate-500">
-              <MapPin className="w-4 h-4" />
-              West Chester, OH
-            </div>
-          </div>
-        </div>
-
-        <Navigation />
-      </div>
-
-      <div className="flex gap-4">
-        <a href="https://github.com/SamarthKhandelwal-create" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary transition-colors">
-          <Github className="w-5 h-5" />
-        </a>
-        <a href="mailto:skhandelwal1324@gmail.com" className="text-slate-400 hover:text-primary transition-colors">
-          <Mail className="w-5 h-5" />
-        </a>
-        <a href="#" className="text-slate-400 hover:text-primary transition-colors">
-          <Linkedin className="w-5 h-5" />
-        </a>
-      </div>
-    </div>
   );
 };
 
@@ -554,15 +515,68 @@ const ResumeSection = () => (
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans selection:bg-primary/20 selection:text-primary">
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-2xl shadow-slate-200/50 dark:shadow-none min-h-screen">
+      <div className="max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-2xl shadow-slate-200/50 dark:shadow-none min-h-screen flex flex-col">
         
-        {/* Sidebar Container (Desktop) */}
-        <aside className="hidden lg:block w-80 flex-shrink-0 relative">
-          <Sidebar />
-        </aside>
+        {/* Top Header Section */}
+        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-900 px-6 md:px-12 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-col">
+              <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Samarth Khandelwal</h1>
+              <p className="text-xs md:text-sm text-primary font-medium">Engineering, CS, & AI</p>
+            </div>
+            
+            <div className="hidden lg:block">
+              <Navigation />
+            </div>
 
-        {/* Mobile Header */}
-        <MobileHeader />
+            <div className="lg:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="w-5 h-5" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] p-6">
+                  <div className="flex flex-col h-full">
+                    <div className="mb-8">
+                      <h2 className="text-xl font-bold">Samarth Khandelwal</h2>
+                      <p className="text-sm text-muted-foreground">Engineering, CS, & AI</p>
+                    </div>
+                    <Navigation mobile onItemClick={() => {}} />
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </header>
+
+        {/* Hero Info Section */}
+        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">High School Student focused on Engineering, Computer Science, and AI.</h2>
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+              Building transformer models for disaster relief and applying deep learning to bioinformatics.
+            </p>
+            <div className="flex flex-wrap gap-6 text-sm text-slate-500">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                West Chester, OH
+              </div>
+              <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail className="w-4 h-4" />
+                skhandelwal1324@gmail.com
+              </a>
+              <div className="flex items-center gap-4 ml-auto">
+                <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="hover:text-primary transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="#" className="hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Main Content Area */}
         <main className="flex-1 px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-slate-950">
