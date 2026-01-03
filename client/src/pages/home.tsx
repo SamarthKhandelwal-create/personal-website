@@ -141,15 +141,16 @@ const AboutSectionContent = () => (
       variants={fadeIn}
     >
       <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">About Me</h2>
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-1 border-l-4 border-primary pl-6 py-2 bg-slate-50 dark:bg-slate-900/50 rounded-r-lg">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-1 pl-6 py-2">
           <p>
             Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
           </p>
         </div>
-        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg order-2 md:order-2 italic">
-          <p>
-            "AI will open up new ways of doing things that we cannot even imagine today." – Sundar Pichai
+        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-2xl md:text-3xl font-bold order-2 md:order-2 italic border-l-4 border-primary pl-10 py-8 bg-slate-50 dark:bg-slate-900/50 rounded-r-xl text-center flex items-center justify-center min-h-[200px] ml-auto">
+          <p className="m-0">
+            "AI will open up new ways of doing things that we cannot even imagine today."<br/>
+            <span className="text-lg font-medium text-slate-500 block mt-4">– Sundar Pichai</span>
           </p>
         </div>
       </div>
