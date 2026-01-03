@@ -143,10 +143,10 @@ const AboutSectionContent = () => (
       <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">About Me</h2>
       <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
         <p className="mb-6">
-          I am a motivated and detail-oriented high school student with a passion for <span className="font-medium text-primary">engineering, computer science, and AI development</span>. I have experience applying advanced concepts, such as transformer models, to real-world challenges like social media analysis for emergency response.
+          I am a <span className="font-medium text-primary">Aspiring AI Engineer</span>. I have experience applying advanced concepts, such as transformer models, to real-world challenges like social media analysis for emergency response.
         </p>
         <p>
-          Recognized for leadership and impact, I have contributed to raising over <span className="font-medium text-slate-900 dark:text-white">$75,000 for cancer research</span> and earned awards in national engineering competitions. I am currently seeking opportunities to deepen my expertise and contribute to meaningful technological innovations.
+          Highly motivated student aiming to build the next big ai tool. I have contributed to raising over <span className="font-medium text-slate-900 dark:text-white">$75,000 for cancer research</span> and earned awards in national engineering competitions. I am currently seeking opportunities to deepen my expertise and contribute to meaningful technological innovations.
         </p>
       </div>
     </motion.div>
@@ -579,9 +579,9 @@ export default function Home() {
         {/* Hero Info Section */}
         <section id="hero" className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">High School Student focused on Engineering, Computer Science, and AI.</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Samarth Khandelwal, Aspiring AI Engineer</h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-              Building transformer models for disaster relief and applying deep learning to bioinformatics.
+              Highly motivated student aiming to build the next big ai tool
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-2">
@@ -627,7 +627,6 @@ export default function Home() {
           </section>
           
           <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 snap-end">
-            <p>© {new Date().getFullYear()} Samarth Khandelwal. All rights reserved.</p>
           </footer>
         </main>
       </div>
