@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   Github, 
   Mail, 
@@ -201,7 +201,7 @@ const AcademicsSectionContent = () => (
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <Card className="bg-slate-900/50 border-slate-800 shadow-none">
+            <Card className="bg-slate-900/50 border-slate-800">
               <CardContent className="pt-6">
                 <h4 className="font-semibold mb-3 text-slate-300">GPA</h4>
                 <div className="space-y-2">
@@ -217,7 +217,7 @@ const AcademicsSectionContent = () => (
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-900/50 border-slate-800 shadow-none">
+            <Card className="bg-slate-900/50 border-slate-800">
               <CardContent className="pt-6">
                 <h4 className="font-semibold mb-3 text-slate-300">SAT Score</h4>
                 <div className="space-y-1">
@@ -613,7 +613,7 @@ const ContactSectionContent = () => {
                       <FormItem>
                         <FormLabel className="text-slate-300">Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="you@example.com" {...field} className="bg-slate-950 border-slate-800 focus-visible:ring-primary text-white" />
+                          <Input placeholder="you@example.com" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -626,7 +626,7 @@ const ContactSectionContent = () => {
                       <FormItem>
                         <FormLabel className="text-slate-300">Subject</FormLabel>
                         <FormControl>
-                          <Input placeholder="Project Inquiry" {...field} className="bg-slate-950 border-slate-800 focus-visible:ring-primary text-white" />
+                          <Input placeholder="Project Inquiry" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -641,7 +641,7 @@ const ContactSectionContent = () => {
                         <FormControl>
                           <Textarea 
                             placeholder="Tell me about your project..." 
-                            className="resize-none min-h-[120px] bg-slate-950 border-slate-800 focus-visible:ring-primary text-white" 
+                            className="resize-none min-h-[120px] bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" 
                             {...field} 
                           />
                         </FormControl>
