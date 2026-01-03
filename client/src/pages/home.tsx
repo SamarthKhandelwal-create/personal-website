@@ -143,14 +143,13 @@ const AboutSectionContent = () => (
       <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">About Me</h2>
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium border-l-4 border-primary pl-6 py-2 bg-transparent rounded-r-lg">
-          <p className="italic">
-            "AI will open up new ways of doing things that we cannot even imagine today."
+          <p>
+            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
           </p>
-          <p className="text-right text-sm font-semibold mt-2">— Sundar Pichai</p>
         </div>
         <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg flex justify-end">
           <p className="max-w-md text-right">
-            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
+            I view AI as the ultimate tool for decoding complexity. I am driven by the challenge of applying computational thinking to unstructured problems. My work is defined by rapid adaptation—constantly learning new frameworks and methodologies to push the boundaries of how we can use technology to improve the human experience.
           </p>
         </div>
       </div>
