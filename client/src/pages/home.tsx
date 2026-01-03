@@ -266,7 +266,6 @@ const ProjectsSectionContent = () => {
       role: "Research Project Team Lead",
       description: "Directed a 7-person team to develop a transformer-based model analyzing social media data to optimize emergency service responses. Utilized data from the Crisis Multimodal Dataset and prompt engineering to build a model that provided actionable summaries. Presented project findings to faculty from UC and regional universities during a competitive poster session. Earned the \"Most Impactful Research Project\" award and the \"Leadership Prestige\" award.",
       tech: ["Transformers", "NLP", "Computer Vision"],
-      awards: ["Most Impactful Research Project (1st of 6 teams)", "Leadership Prestige Award"],
       context: "UC AI Research Internship",
       links: [
         { name: "Research Poster", url: "/attached_assets/ExLAI_Poster_1767460245154.pdf" }
@@ -375,17 +374,6 @@ const ProjectsSectionContent = () => {
                     {project.description}
                   </p>
                   
-                  {project.awards && (
-                    <div className="mb-6 space-y-2">
-                      {project.awards.map((award, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 p-2 rounded-md">
-                          <span>🏆</span>
-                          <span className="font-medium">{award}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map(t => (
                       <span key={t} className="text-[10px] font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-2 py-0.5 rounded shadow-sm">
