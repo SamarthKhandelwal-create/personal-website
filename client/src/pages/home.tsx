@@ -299,9 +299,15 @@ const ProjectsSectionContent = () => {
         
         // Calculate the next scroll position based on current scroll position to ensure perfect snapping
         const currentScroll = container.scrollLeft;
-        const targetScroll = direction === 'left' 
-          ? Math.max(0, Math.floor((currentScroll - 10) / scrollAmount) * scrollAmount)
-          : Math.min(container.scrollWidth - container.clientWidth, Math.ceil((currentScroll + 10) / scrollAmount) * scrollAmount);
+        let targetScroll;
+        
+        if (direction === 'left') {
+          // Subtract a small buffer to handle floating point precision and find the previous card
+          targetScroll = Math.max(0, Math.round((currentScroll - scrollAmount) / scrollAmount) * scrollAmount);
+        } else {
+          // Add a small buffer to find the next card
+          targetScroll = Math.min(container.scrollWidth - container.clientWidth, Math.round((currentScroll + scrollAmount) / scrollAmount) * scrollAmount);
+        }
 
         container.scrollTo({
           left: targetScroll,
