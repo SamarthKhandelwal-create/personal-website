@@ -265,7 +265,7 @@ const ProjectsSectionContent = () => {
       title: "CrisisAnalyzer: Multimodal Disaster Summarization",
       role: "Research Project Team Lead",
       description: "Led a team developing a multimodal AI system that processes real-time social media data to generate concise summaries for emergency responders.",
-      tech: ["Transformers", "NLP", "Computer Vision", "GPT-4o mini", "BERTScore 0.78"],
+      tech: ["Transformers", "NLP", "Computer Vision"],
       awards: ["Most Impactful Research Project (1st of 6 teams)", "Leadership Prestige Award"],
       context: "UC AI Research Internship",
       links: [
@@ -276,14 +276,14 @@ const ProjectsSectionContent = () => {
       title: "Glioblastoma Research: ceRNA Networks via RGCN",
       role: "Principal Investigator",
       description: "Investigating if Relational Graph Convolutional Networks (RGCN) can model miRNA-lncRNA-mRNA networks in Glioblastoma to identify master regulators and treatment targets.",
-      tech: ["Graph ML", "PyTorch Geometric", "GNNExplainer", "Bioinformatics"],
+      tech: ["Graph ML", "PyTorch Geometric", "Deep Learning", "Bioinformatics"],
       context: "AP Research Project"
     },
     {
       title: "EagleVision: Live Microscope Web Session",
       role: "Developer",
       description: "A web app allowing teachers to stream a phone-mounted microscope feed to student devices with real-time pan/zoom and annotation features.",
-      tech: ["WebRTC", "Socket.io", "JavaScript", "HTML5 Canvas"],
+      tech: ["WebRTC", "JavaScript", "HTML"],
       context: "Programming Club Competition"
     }
   ];
