@@ -400,48 +400,112 @@ const ProjectsSectionContent = () => {
   );
 };
 
-const CommunitySectionContent = () => (
+const CommunitySectionContent = () => {
+  const communityData = [
+    {
+      title: "Lakota Robotics FRC Team 1038",
+      role: "Autonomous Lead",
+      desc: "Program robot control systems in Java; led team to World Championship qualifications and won Regional FIRST Impact Award."
+    },
+    {
+      title: "Ohio Attorney General's Teen Ambassador Board",
+      role: "Group Lead",
+      desc: "Leading a statewide committee to advise on AI ethics in secondary education and drafting policy recommendations."
+    },
+    {
+      title: "Leukemia & Lymphoma Society",
+      role: "Social Media Manager",
+      desc: "Co-managed a campaign raising over $75,000 for leukemia research."
+    },
+    {
+      title: "Kumon Math & Reading Center",
+      role: "Center Assistant/Volunteer",
+      desc: "Managed center operations and volunteered 350+ hours assisting students."
+    }
+  ];
+
+  const scroll = (direction: 'left' | 'right') => {
+    const container = document.getElementById('community-container');
+    if (container) {
+      const scrollAmount = container.clientWidth;
+      const currentScroll = container.scrollLeft;
+      const currentIndex = Math.round(currentScroll / scrollAmount);
+      
+      let targetScroll;
+      if (direction === 'left') {
+        targetScroll = (currentIndex - 1) * scrollAmount;
+      } else {
+        targetScroll = (currentIndex + 1) * scrollAmount;
+      }
+
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={fadeIn}
+      variants={staggerContainer}
+      className="relative w-full"
     >
-      <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">Community Outreach</h2>
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50">Community Outreach</h2>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll('left')}
+            className="rounded-full border-slate-200 dark:border-slate-800"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll('right')}
+            className="rounded-full border-slate-200 dark:border-slate-800"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </Button>
+        </div>
+      </div>
       
-      <div className="relative border-l border-slate-200 dark:border-slate-800 ml-3 space-y-12 pb-4">
-        {[
-          {
-            title: "Lakota Robotics FRC Team 1038",
-            role: "Autonomous Lead",
-            desc: "Program robot control systems in Java; led team to World Championship qualifications and won Regional FIRST Impact Award."
-          },
-          {
-            title: "Ohio Attorney General's Teen Ambassador Board",
-            role: "Group Lead",
-            desc: "Leading a statewide committee to advise on AI ethics in secondary education and drafting policy recommendations."
-          },
-          {
-            title: "Leukemia & Lymphoma Society",
-            role: "Social Media Manager",
-            desc: "Co-managed a campaign raising over $75,000 for leukemia research."
-          },
-          {
-            title: "Kumon Math & Reading Center",
-            role: "Center Assistant/Volunteer",
-            desc: "Managed center operations and volunteered 350+ hours assisting students."
-          }
-        ].map((item, i) => (
-          <div key={i} className="relative pl-8">
-            <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-slate-200 dark:bg-slate-800 border border-white dark:border-slate-950 ring-4 ring-white dark:ring-slate-950" />
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50">{item.title}</h3>
-            <p className="text-sm font-medium text-primary mb-2">{item.role}</p>
-            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-          </div>
+      <div 
+        id="community-container"
+        className="flex overflow-x-hidden gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {communityData.map((item, i) => (
+          <motion.div 
+            key={i} 
+            variants={fadeIn}
+            className="w-full snap-center flex-shrink-0"
+          >
+            <div className="max-w-[700px] h-full">
+              <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
+                <CardHeader className="flex-shrink-0">
+                  <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight max-w-xl">{item.title}</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg mt-2">{item.role}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-2xl">
+                    {item.desc}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>
-);
+  );
+};
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
