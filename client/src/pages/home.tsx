@@ -413,22 +413,17 @@ const CommunitySectionContent = () => {
     {
       title: "Lakota Robotics FRC Team 1038",
       role: "Autonomous Lead",
-      desc: "Program robot control systems in Java; led team to World Championship qualifications and won Regional FIRST Impact Award."
+      desc: "Programming and operating the robot for FIRST Robotics Competition Team 1038, writing Java control code and managing live telemetry during practice matches. Ensuring the timeliness and quality of deliverables to the robot manager and training new team members. Led the team to win the Industrial Design Award and Impact award at regional level competitions, securing qualification for the 2025 FIRST World Championship. Volunteering 40-50 hours a year to assist in outreach events."
     },
     {
       title: "Ohio Attorney General's Teen Ambassador Board",
       role: "Group Lead",
-      desc: "Leading a statewide committee to advise on AI ethics in secondary education and drafting policy recommendations."
-    },
-    {
-      title: "Leukemia & Lymphoma Society",
-      role: "Social Media Manager",
-      desc: "Co-managed a campaign raising over $75,000 for leukemia research."
+      desc: "Leading a committee of peers across Ohio in coordination with the Attorney General to advocate for policies that lead to the effective use of AI in education. Currently, the committee is conducting surveys to assess the current state of AI-related academic dishonesty and has obtained representation from 20+ schools. Additionally, we are in the process of drafting school policy recommendations with feedback from the Ohio Attorney General's Higher Education Section."
     },
     {
       title: "Kumon Math & Reading Center",
       role: "Center Assistant/Volunteer",
-      desc: "Managed center operations and volunteered 350+ hours assisting students."
+      desc: "Managed the center during class hours and assigned digital coursework using Kumon Connect. Volunteered over 350 hours assisting students and grading materials."
     }
   ];
 
