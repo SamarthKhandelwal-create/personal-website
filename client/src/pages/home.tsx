@@ -511,7 +511,7 @@ export default function Home() {
         </header>
 
         {/* Hero Info Section */}
-        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start">
+        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">High School Student focused on Engineering, Computer Science, and AI.</h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -540,27 +540,27 @@ export default function Home() {
 
         {/* Main Content Area */}
         <main className="flex-1 px-6 md:px-12 lg:px-20 bg-white dark:bg-slate-950">
-          <section id="about" className="py-16 md:py-24 max-w-3xl snap-start scroll-mt-20 min-h-[60vh] flex flex-col justify-center">
+          <section id="about" className="max-w-3xl snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
             <AboutSectionContent />
           </section>
           
-          <section id="academics" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-[60vh] flex flex-col justify-center">
+          <section id="academics" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
             <AcademicsSectionContent />
           </section>
 
-          <section id="projects" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
             <ProjectsSectionContent />
           </section>
 
-          <section id="community" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+          <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
             <CommunitySectionContent />
           </section>
 
-          <section id="contact" className="py-16 md:py-24 border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+          <section id="contact" className="border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
             <ContactSectionContent />
           </section>
           
-          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 mt-12 snap-end">
+          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 snap-end">
             <p>© {new Date().getFullYear()} Samarth Khandelwal. All rights reserved.</p>
           </footer>
         </main>
