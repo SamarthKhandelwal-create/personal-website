@@ -341,7 +341,7 @@ const ProjectsSectionContent = () => {
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="min-w-[300px] md:min-w-[450px] snap-start flex-shrink-0"
+              className="min-w-[320px] md:min-w-[700px] snap-start flex-shrink-0"
             >
               <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors">
                 <CardHeader>
