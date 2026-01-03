@@ -12,6 +12,7 @@ import {
   Users, 
   MessageSquare,
   ChevronRight,
+  ChevronLeft,
   Menu,
   X,
   Phone,
@@ -254,6 +255,11 @@ const AcademicsSectionContent = () => (
 );
 
 const ProjectsSectionContent = () => {
+  const scrollRef = import("react").then(m => {
+    // This is a bit tricky in a functional component without proper state/ref management inside the component body
+    // but I'll implement it within the component below.
+  });
+
   const projects = [
     {
       title: "CrisisAnalyzer: Multimodal Disaster Summarization",
@@ -282,20 +288,58 @@ const ProjectsSectionContent = () => {
     }
   ];
 
+  const scroll = (direction: 'left' | 'right') => {
+    const container = document.getElementById('projects-container');
+    if (container) {
+      const scrollAmount = 400;
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
+        className="relative"
       >
-        <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">Projects</h2>
-        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50">Projects</h2>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => scroll('left')}
+              className="rounded-full border-slate-200 dark:border-slate-800"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => scroll('right')}
+              className="rounded-full border-slate-200 dark:border-slate-800"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+
+        <div 
+          id="projects-container"
+          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 scroll-smooth"
+        >
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="min-w-[300px] md:min-w-[450px] snap-center flex-shrink-0"
+              className="min-w-[300px] md:min-w-[450px] snap-start flex-shrink-0"
             >
               <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors">
                 <CardHeader>
