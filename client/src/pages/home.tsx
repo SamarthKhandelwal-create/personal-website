@@ -363,14 +363,14 @@ const ProjectsSectionContent = () => {
             >
               <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors">
                 <CardHeader>
-                  <div className="flex justify-between items-start gap-2 mb-2">
-                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-slate-50">{project.title}</CardTitle>
+                  <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-slate-50 break-words whitespace-normal">{project.title}</CardTitle>
                     <Badge variant="outline" className="text-xs font-normal whitespace-nowrap">{project.context}</Badge>
                   </div>
-                  <CardDescription className="text-sm font-medium text-primary">{project.role}</CardDescription>
+                  <CardDescription className="text-sm font-medium text-primary whitespace-normal">{project.role}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 whitespace-normal">
                     {project.description}
                   </p>
                   
