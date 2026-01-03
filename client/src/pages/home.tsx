@@ -290,27 +290,22 @@ const ProjectsSectionContent = () => {
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('projects-container');
     if (container) {
-      const card = container.querySelector('.snap-center');
-      if (card) {
-        const cardWidth = card.getBoundingClientRect().width;
-        const gap = 32; // gap-8 (2rem * 16px)
-        const scrollAmount = cardWidth + gap;
-        
-        const currentScroll = container.scrollLeft;
-        const currentIndex = Math.round(currentScroll / scrollAmount);
-        
-        let targetScroll;
-        if (direction === 'left') {
-          targetScroll = (currentIndex - 1) * scrollAmount;
-        } else {
-          targetScroll = (currentIndex + 1) * scrollAmount;
-        }
-
-        container.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth'
-        });
+      const scrollAmount = container.clientWidth;
+      
+      const currentScroll = container.scrollLeft;
+      const currentIndex = Math.round(currentScroll / scrollAmount);
+      
+      let targetScroll;
+      if (direction === 'left') {
+        targetScroll = (currentIndex - 1) * scrollAmount;
+      } else {
+        targetScroll = (currentIndex + 1) * scrollAmount;
       }
+
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -348,54 +343,56 @@ const ProjectsSectionContent = () => {
 
         <div 
           id="projects-container"
-          className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-4 -mx-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-hidden gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="w-[85vw] md:w-[600px] lg:w-[700px] snap-center flex-shrink-0"
+              className="w-full snap-center flex-shrink-0"
             >
-              <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
-                <CardHeader className="flex-shrink-0">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
-                    <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight max-w-xl">{project.title}</CardTitle>
-                    <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1">{project.context}</Badge>
-                  </div>
-                  <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg">{project.role}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-3">
-                    {project.tech.map(t => (
-                      <span key={t} className="text-xs font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-3 py-1 rounded shadow-sm">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="mt-auto border-t border-slate-100 dark:border-slate-800 pt-6">
-                  {project.links && (
-                    <div className="flex gap-6">
-                      {project.links.map((link, i) => (
-                        <a 
-                          key={i} 
-                          href={link.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group"
-                        >
-                          <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
-                          {link.name}
-                        </a>
+              <div className="max-w-[700px] mx-auto h-full">
+                <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
+                  <CardHeader className="flex-shrink-0">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
+                      <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight max-w-xl">{project.title}</CardTitle>
+                      <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1">{project.context}</Badge>
+                    </div>
+                    <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg">{project.role}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      {project.tech.map(t => (
+                        <span key={t} className="text-xs font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-3 py-1 rounded shadow-sm">
+                          {t}
+                        </span>
                       ))}
                     </div>
-                  )}
-                </CardFooter>
-              </Card>
+                  </CardContent>
+                  <CardFooter className="mt-auto border-t border-slate-100 dark:border-slate-800 pt-6">
+                    {project.links && (
+                      <div className="flex gap-6">
+                        {project.links.map((link, i) => (
+                          <a 
+                            key={i} 
+                            href={link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group"
+                          >
+                            <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
+                            {link.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </CardFooter>
+                </Card>
+              </div>
             </motion.div>
           ))}
         </div>
