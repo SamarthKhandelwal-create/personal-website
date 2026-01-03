@@ -291,13 +291,23 @@ const ProjectsSectionContent = () => {
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('projects-container');
     if (container) {
-      const cardWidth = container.querySelector('.snap-start')?.clientWidth || 400;
-      const gap = 24; // gap-6
-      const scrollAmount = cardWidth + gap;
-      container.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
+      const card = container.querySelector('.snap-start');
+      if (card) {
+        const cardWidth = card.clientWidth;
+        const gap = 24; // gap-6
+        const scrollAmount = cardWidth + gap;
+        
+        // Calculate the next scroll position based on current scroll position to ensure perfect snapping
+        const currentScroll = container.scrollLeft;
+        const targetScroll = direction === 'left' 
+          ? Math.max(0, Math.floor((currentScroll - 10) / scrollAmount) * scrollAmount)
+          : Math.min(container.scrollWidth - container.clientWidth, Math.ceil((currentScroll + 10) / scrollAmount) * scrollAmount);
+
+        container.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
