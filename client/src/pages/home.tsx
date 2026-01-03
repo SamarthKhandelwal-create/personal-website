@@ -89,33 +89,9 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
   );
 };
 
-const MobileHeader = () => {
-  return (
-    <div className="lg:hidden sticky top-0 z-50 flex items-center justify-between p-4 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-      <span className="font-bold text-lg">Samarth Khandelwal</span>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <Menu className="w-5 h-5" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="w-[300px] sm:w-[400px] p-6">
-          <div className="flex flex-col h-full">
-            <div className="mb-8">
-              <h2 className="text-xl font-bold">Samarth Khandelwal</h2>
-            </div>
-            <Navigation mobile onItemClick={() => {}} />
-          </div>
-        </SheetContent>
-      </Sheet>
-    </div>
-  );
-};
+// --- Content Sections Content ---
 
-// --- Content Sections ---
-
-const AboutSection = () => (
-  <section id="about" className="py-16 md:py-24 max-w-3xl">
+const AboutSectionContent = () => (
     <motion.div 
       initial="hidden"
       whileInView="visible"
@@ -132,11 +108,9 @@ const AboutSection = () => (
         </p>
       </div>
     </motion.div>
-  </section>
 );
 
-const AcademicsSection = () => (
-  <section id="academics" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800">
+const AcademicsSectionContent = () => (
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -230,10 +204,9 @@ const AcademicsSection = () => (
         </motion.div>
       </div>
     </motion.div>
-  </section>
 );
 
-const ProjectsSection = () => {
+const ProjectsSectionContent = () => {
   const projects = [
     {
       title: "CrisisAnalyzer: Multimodal Disaster Summarization",
@@ -263,8 +236,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800">
-      <motion.div
+    <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -326,12 +298,10 @@ const ProjectsSection = () => {
           ))}
         </div>
       </motion.div>
-    </section>
   );
 };
 
-const CommunitySection = () => (
-  <section id="community" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800">
+const CommunitySectionContent = () => (
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -372,10 +342,7 @@ const CommunitySection = () => (
         ))}
       </div>
     </motion.div>
-  </section>
 );
-
-// --- Contact Form ---
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -383,7 +350,7 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
-const ContactSection = () => {
+const ContactSectionContent = () => {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -404,7 +371,6 @@ const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-24 border-t border-slate-100 dark:border-slate-800">
        <motion.div
         initial="hidden"
         whileInView="visible"
@@ -502,7 +468,6 @@ const ContactSection = () => {
           </div>
         </div>
       </motion.div>
-    </section>
   );
 };
 
@@ -511,7 +476,7 @@ const ContactSection = () => {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans selection:bg-primary/20 selection:text-primary">
+    <div className="h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans selection:bg-primary/20 selection:text-primary overflow-y-scroll snap-y snap-mandatory scroll-smooth">
       <div className="max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-2xl shadow-slate-200/50 dark:shadow-none min-h-screen flex flex-col">
         
         {/* Top Header Section */}
@@ -546,7 +511,7 @@ export default function Home() {
         </header>
 
         {/* Hero Info Section */}
-        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900">
+        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">High School Student focused on Engineering, Computer Science, and AI.</h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -574,14 +539,28 @@ export default function Home() {
         </section>
 
         {/* Main Content Area */}
-        <main className="flex-1 px-6 md:px-12 lg:px-20 py-8 bg-white dark:bg-slate-950">
-          <AboutSection />
-          <AcademicsSection />
-          <ProjectsSection />
-          <CommunitySection />
-          <ContactSection />
+        <main className="flex-1 px-6 md:px-12 lg:px-20 bg-white dark:bg-slate-950">
+          <section id="about" className="py-16 md:py-24 max-w-3xl snap-start scroll-mt-20 min-h-[60vh] flex flex-col justify-center">
+            <AboutSectionContent />
+          </section>
           
-          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 mt-12">
+          <section id="academics" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-[60vh] flex flex-col justify-center">
+            <AcademicsSectionContent />
+          </section>
+
+          <section id="projects" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+            <ProjectsSectionContent />
+          </section>
+
+          <section id="community" className="py-16 md:py-24 max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+            <CommunitySectionContent />
+          </section>
+
+          <section id="contact" className="py-16 md:py-24 border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20">
+            <ContactSectionContent />
+          </section>
+          
+          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 mt-12 snap-end">
             <p>© {new Date().getFullYear()} Samarth Khandelwal. All rights reserved.</p>
           </footer>
         </main>
