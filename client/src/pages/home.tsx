@@ -353,47 +353,47 @@ const ProjectsSectionContent = () => {
 
         <div 
           id="projects-container"
-          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-4 -mx-4 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="min-w-[320px] md:min-w-[700px] snap-start flex-shrink-0"
+              className="w-[85vw] md:w-[800px] lg:w-[900px] snap-center flex-shrink-0"
             >
-              <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors">
-                <CardHeader>
-                  <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-slate-50 break-words whitespace-normal">{project.title}</CardTitle>
-                    <Badge variant="outline" className="text-xs font-normal whitespace-nowrap">{project.context}</Badge>
+              <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
+                <CardHeader className="flex-shrink-0">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
+                    <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight">{project.title}</CardTitle>
+                    <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1">{project.context}</Badge>
                   </div>
-                  <CardDescription className="text-sm font-medium text-primary whitespace-normal">{project.role}</CardDescription>
+                  <CardDescription className="text-base font-medium text-primary leading-snug">{project.role}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 whitespace-normal">
+                <CardContent className="flex-grow">
+                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {project.tech.map(t => (
-                      <span key={t} className="text-[10px] font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-2 py-0.5 rounded shadow-sm">
+                      <span key={t} className="text-xs font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-3 py-1 rounded shadow-sm">
                         {t}
                       </span>
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="mt-auto">
+                <CardFooter className="mt-auto border-t border-slate-100 dark:border-slate-800 pt-6">
                   {project.links && (
-                    <div className="flex gap-3">
+                    <div className="flex gap-6">
                       {project.links.map((link, i) => (
                         <a 
                           key={i} 
                           href={link.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group"
                         >
-                          <FileText className="w-3.5 h-3.5" />
+                          <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
                           {link.name}
                         </a>
                       ))}
