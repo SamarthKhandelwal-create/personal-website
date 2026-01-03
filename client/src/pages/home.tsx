@@ -351,7 +351,7 @@ const ProjectsSectionContent = () => {
               variants={fadeIn}
               className="w-full snap-center flex-shrink-0"
             >
-              <div className="max-w-[700px] mx-auto h-full">
+            <div className="max-w-[700px] h-full">
                 <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
                   <CardHeader className="flex-shrink-0">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
