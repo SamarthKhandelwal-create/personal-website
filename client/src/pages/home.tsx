@@ -328,7 +328,7 @@ const ProjectsSectionContent = () => {
         variants={staggerContainer}
         className="relative"
       >
-        <div className="flex items-center justify-between mb-8 max-w-3xl">
+        <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50">Projects</h2>
           <div className="flex gap-2">
             <Button
