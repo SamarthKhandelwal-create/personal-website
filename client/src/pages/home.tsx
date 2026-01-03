@@ -87,7 +87,7 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
 
   const scrollToSection = (id: string) => {
     if (id === "resume") {
-      window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767460225537.pdf", "_blank");
+      window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767478059587.pdf", "_blank");
       if (onItemClick) onItemClick();
       return;
     }
