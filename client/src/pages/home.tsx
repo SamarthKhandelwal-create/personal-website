@@ -354,7 +354,7 @@ const ProjectsSectionContent = () => {
 
         <div 
           id="projects-container"
-          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-none -mx-6 px-6 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, index) => (
             <motion.div 
@@ -709,8 +709,10 @@ export default function Home() {
             <AcademicsSectionContent />
           </section>
 
-          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
-            <ProjectsSectionContent />
+          <section id="projects" className="max-w-full border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+            <div className="max-w-3xl mx-auto w-full">
+              <ProjectsSectionContent />
+            </div>
           </section>
 
           <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
