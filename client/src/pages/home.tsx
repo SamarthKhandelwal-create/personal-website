@@ -291,7 +291,9 @@ const ProjectsSectionContent = () => {
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('projects-container');
     if (container) {
-      const scrollAmount = 400;
+      const cardWidth = container.querySelector('.snap-start')?.clientWidth || 400;
+      const gap = 24; // gap-6
+      const scrollAmount = cardWidth + gap;
       container.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -333,7 +335,7 @@ const ProjectsSectionContent = () => {
 
         <div 
           id="projects-container"
-          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 scroll-smooth"
+          className="flex overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-none -mx-6 px-6 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((project, index) => (
             <motion.div 
