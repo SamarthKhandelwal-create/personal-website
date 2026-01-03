@@ -34,6 +34,36 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 // --- Components ---
 
+const AnimatedBackground = () => (
+  <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-white">
+    <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+    <motion.div
+      animate={{
+        scale: [1, 1.1, 1],
+        rotate: [0, 5, 0],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+      className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-slate-100/50 blur-[120px] rounded-full"
+    />
+    <motion.div
+      animate={{
+        scale: [1, 1.2, 1],
+        rotate: [0, -5, 0],
+      }}
+      transition={{
+        duration: 25,
+        repeat: Infinity,
+        ease: "linear"
+      }}
+      className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-slate-100/50 blur-[120px] rounded-full"
+    />
+  </div>
+);
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -674,32 +704,33 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans selection:bg-primary/20 selection:text-primary overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+    <div className="h-screen bg-white text-black font-sans selection:bg-black selection:text-white overflow-y-scroll snap-y snap-mandatory scroll-smooth relative">
+      <AnimatedBackground />
       <DotNavigation activeSection={activeSection} />
-      <div className="max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-2xl shadow-slate-200/50 dark:shadow-none min-h-screen flex flex-col">
+      <div className="max-w-7xl mx-auto bg-white/50 backdrop-blur-[2px] shadow-2xl shadow-slate-200/50 min-h-screen flex flex-col">
         
         {/* Top Header Section */}
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-900 px-6 md:px-12 py-4">
+        <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 px-6 md:px-12 py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Samarth Khandelwal</h1>
+              <h1 className="text-xl md:text-2xl font-bold tracking-tight text-black">Samarth Khandelwal</h1>
             </div>
             
-            <div className="hidden lg:block">
+            <div className="hidden lg:block text-black">
               <Navigation />
             </div>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden text-black">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
                     <Menu className="w-5 h-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] p-6">
+                <SheetContent side="right" className="w-[300px] p-6 bg-white text-black">
                   <div className="flex flex-col h-full">
                     <div className="mb-8">
-                      <h2 className="text-xl font-bold">Samarth Khandelwal</h2>
+                      <h2 className="text-xl font-bold text-black">Samarth Khandelwal</h2>
                     </div>
                     <Navigation mobile onItemClick={() => {}} />
                   </div>
@@ -710,18 +741,18 @@ export default function Home() {
         </header>
 
         {/* Hero Info Section */}
-        <section id="hero" className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
+        <section id="hero" className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-white/30 border-b border-slate-100 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-2 text-slate-900 dark:text-slate-50 tracking-tight">Samarth Khandelwal</h1>
-            <p className="text-xl md:text-2xl font-semibold text-primary mb-6">Aspiring AI Engineer</p>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-2 text-black tracking-tight">Samarth Khandelwal</h1>
+            <p className="text-xl md:text-2xl font-semibold text-black mb-6">Aspiring AI Engineer</p>
+            <p className="text-lg md:text-xl text-slate-700 mb-8 leading-relaxed max-w-2xl">
               Motivated and detail-oriented high school student seeking opportunities to deepen expertise in engineering, AI, and computer science development.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
               <Button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-white rounded-full px-8"
+                className="bg-black hover:bg-slate-800 text-white rounded-full px-8"
               >
                 Contact Me
               </Button>
@@ -729,25 +760,25 @@ export default function Home() {
                 variant="outline"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 size="lg" 
-                className="rounded-full px-8 border-slate-200 dark:border-slate-800"
+                className="rounded-full px-8 border-black text-black hover:bg-black hover:text-white transition-colors"
               >
                 Learn More
               </Button>
             </div>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-500">
+            <div className="flex flex-wrap gap-6 text-sm text-slate-600 font-medium">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 Cincinnati, OH
               </div>
-              <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-2 hover:text-black transition-colors underline underline-offset-4">
                 <Mail className="w-4 h-4" />
                 skhandelwal1324@gmail.com
               </a>
               <div className="flex items-center gap-4 ml-auto">
-                <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="hover:text-primary transition-colors">
+                <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="text-black hover:scale-110 transition-transform">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="#" className="text-black hover:scale-110 transition-transform">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
@@ -756,28 +787,28 @@ export default function Home() {
         </section>
 
         {/* Main Content Area */}
-        <main className="flex-1 px-6 md:px-12 lg:px-20 bg-white dark:bg-slate-950">
+        <main className="flex-1 px-6 md:px-12 lg:px-20 bg-white/10">
           <section id="about" className="max-w-3xl snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AboutSectionContent />
           </section>
           
-          <section id="academics" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+          <section id="academics" className="max-w-3xl border-t border-slate-200 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AcademicsSectionContent />
           </section>
 
-          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+          <section id="projects" className="max-w-3xl border-t border-slate-200 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <ProjectsSectionContent />
           </section>
 
-          <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+          <section id="community" className="max-w-3xl border-t border-slate-200 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <CommunitySectionContent />
           </section>
 
-          <section id="contact" className="border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+          <section id="contact" className="border-t border-slate-200 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <ContactSectionContent />
           </section>
           
-          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 snap-end">
+          <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 snap-end">
           </footer>
         </main>
       </div>
