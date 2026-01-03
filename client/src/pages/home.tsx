@@ -290,25 +290,20 @@ const ProjectsSectionContent = () => {
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById('projects-container');
     if (container) {
-      const card = container.querySelector('.snap-start');
+      const card = container.querySelector('.snap-center');
       if (card) {
-        // Use getBoundingClientRect for sub-pixel accuracy
         const cardWidth = card.getBoundingClientRect().width;
-        const gap = 24; // gap-6 (1.5rem * 16px)
+        const gap = 32; // gap-8 (2rem * 16px)
         const scrollAmount = cardWidth + gap;
         
         const currentScroll = container.scrollLeft;
-        let targetScroll;
-        
-        // Find the index of the current card based on scroll position
         const currentIndex = Math.round(currentScroll / scrollAmount);
         
+        let targetScroll;
         if (direction === 'left') {
-          // Go to the previous card index
-          targetScroll = Math.max(0, (currentIndex - 1) * scrollAmount);
+          targetScroll = (currentIndex - 1) * scrollAmount;
         } else {
-          // Go to the next card index
-          targetScroll = Math.min(container.scrollWidth - container.clientWidth, (currentIndex + 1) * scrollAmount);
+          targetScroll = (currentIndex + 1) * scrollAmount;
         }
 
         container.scrollTo({
@@ -325,7 +320,7 @@ const ProjectsSectionContent = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="relative"
+        className="relative w-full"
       >
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50">Projects</h2>
@@ -359,18 +354,18 @@ const ProjectsSectionContent = () => {
             <motion.div 
               key={index} 
               variants={fadeIn}
-              className="w-[85vw] md:w-[800px] lg:w-[900px] snap-center flex-shrink-0"
+              className="w-[85vw] md:w-[600px] lg:w-[700px] snap-center flex-shrink-0"
             >
               <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
                 <CardHeader className="flex-shrink-0">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
-                    <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight">{project.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-slate-900 dark:text-slate-50 break-words leading-tight max-w-xl">{project.title}</CardTitle>
                     <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1">{project.context}</Badge>
                   </div>
-                  <CardDescription className="text-base font-medium text-primary leading-snug">{project.role}</CardDescription>
+                  <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg">{project.role}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                  <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">
                     {project.description}
                   </p>
                   
