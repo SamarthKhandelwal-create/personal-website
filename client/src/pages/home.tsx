@@ -293,20 +293,23 @@ const ProjectsSectionContent = () => {
     if (container) {
       const card = container.querySelector('.snap-start');
       if (card) {
-        const cardWidth = card.clientWidth;
-        const gap = 24; // gap-6
+        // Use getBoundingClientRect for sub-pixel accuracy
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = 24; // gap-6 (1.5rem * 16px)
         const scrollAmount = cardWidth + gap;
         
-        // Calculate the next scroll position based on current scroll position to ensure perfect snapping
         const currentScroll = container.scrollLeft;
         let targetScroll;
         
+        // Find the index of the current card based on scroll position
+        const currentIndex = Math.round(currentScroll / scrollAmount);
+        
         if (direction === 'left') {
-          // Subtract a small buffer to handle floating point precision and find the previous card
-          targetScroll = Math.max(0, Math.round((currentScroll - scrollAmount) / scrollAmount) * scrollAmount);
+          // Go to the previous card index
+          targetScroll = Math.max(0, (currentIndex - 1) * scrollAmount);
         } else {
-          // Add a small buffer to find the next card
-          targetScroll = Math.min(container.scrollWidth - container.clientWidth, Math.round((currentScroll + scrollAmount) / scrollAmount) * scrollAmount);
+          // Go to the next card index
+          targetScroll = Math.min(container.scrollWidth - container.clientWidth, (currentIndex + 1) * scrollAmount);
         }
 
         container.scrollTo({
