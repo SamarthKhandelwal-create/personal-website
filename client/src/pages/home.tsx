@@ -120,10 +120,10 @@ const DotNavigation = ({ activeSection }: { activeSection: string }) => {
             {section.label}
           </span>
           <div 
-            className={`w-3 h-3 rounded-full transition-all duration-300 border-2 ${
+            className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${
               activeSection === section.id 
-                ? "bg-primary border-primary scale-125 shadow-[0_0_10px_rgba(0,109,119,0.5)]" 
-                : "bg-slate-300 dark:bg-slate-700 border-transparent hover:bg-slate-400 dark:hover:bg-slate-600"
+                ? "bg-primary border-primary scale-125 shadow-[0_0_15px_rgba(0,109,119,0.6)]" 
+                : "bg-slate-300 dark:bg-slate-700 border-transparent hover:bg-slate-400 dark:hover:bg-slate-600 hover:scale-110"
             }`}
           />
         </button>
