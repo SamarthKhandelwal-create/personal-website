@@ -238,12 +238,12 @@ const AcademicsSectionContent = () => (
               </div>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-md border border-slate-100 dark:border-slate-800">
-                   <p className="text-xs text-primary font-semibold mb-1">University of Cincinnati</p>
-                   <p className="text-sm text-slate-700 dark:text-slate-300">Statistics 1031, 19th Century Music, Nutrition 101</p>
+                   <p className="text-xs text-primary font-semibold mb-1">Ohio State University</p>
+                   <p className="text-sm text-slate-700 dark:text-slate-300">Multivariable Calculus, Family Financial Management</p>
                 </div>
                 <div className="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-md border border-slate-100 dark:border-slate-800">
-                   <p className="text-xs text-primary font-semibold mb-1">Ohio State University</p>
-                   <p className="text-sm text-slate-700 dark:text-slate-300">Family Financial Management, Multivariable Calculus</p>
+                   <p className="text-xs text-primary font-semibold mb-1">University of Cincinnati</p>
+                   <p className="text-sm text-slate-700 dark:text-slate-300">Statistics 1031, 19th Century Music, Nutrition 101</p>
                 </div>
               </div>
             </div>
@@ -290,57 +290,64 @@ const ProjectsSectionContent = () => {
         variants={staggerContainer}
       >
         <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">Projects</h2>
-        <div className="grid gap-8">
+        <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
           {projects.map((project, index) => (
-            <motion.div key={index} variants={fadeIn}>
-              <div className="group relative pl-8 border-l-2 border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <Badge variant="outline" className="w-fit text-xs font-normal text-slate-500 border-slate-300 dark:border-slate-700">{project.context}</Badge>
-                </div>
-                
-                <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-3">{project.role}</p>
-                
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                
-                {project.awards && (
-                  <div className="mb-4 flex flex-col gap-2">
-                    {project.awards.map((award, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-amber-700 dark:text-amber-400">
-                        <span className="text-lg">🏆</span>
-                        <span className="font-medium">{award}</span>
-                      </div>
+            <motion.div 
+              key={index} 
+              variants={fadeIn}
+              className="min-w-[300px] md:min-w-[450px] snap-center flex-shrink-0"
+            >
+              <Card className="h-full border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 hover:border-primary transition-colors">
+                <CardHeader>
+                  <div className="flex justify-between items-start gap-2 mb-2">
+                    <CardTitle className="text-xl font-bold text-slate-900 dark:text-slate-50">{project.title}</CardTitle>
+                    <Badge variant="outline" className="text-xs font-normal whitespace-nowrap">{project.context}</Badge>
+                  </div>
+                  <CardDescription className="text-sm font-medium text-primary">{project.role}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                  
+                  {project.awards && (
+                    <div className="mb-6 space-y-2">
+                      {project.awards.map((award, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 p-2 rounded-md">
+                          <span>🏆</span>
+                          <span className="font-medium">{award}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map(t => (
+                      <span key={t} className="text-[10px] font-mono text-slate-500 bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 px-2 py-0.5 rounded shadow-sm">
+                        {t}
+                      </span>
                     ))}
                   </div>
-                )}
-
-                {project.links && (
-                  <div className="mb-4 flex gap-3">
-                    {project.links.map((link, i) => (
-                      <a 
-                        key={i} 
-                        href={link.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
-                      >
-                        <FileText className="w-3.5 h-3.5" />
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map(t => (
-                    <span key={t} className="text-xs font-mono text-slate-500 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                </CardContent>
+                <CardFooter className="mt-auto">
+                  {project.links && (
+                    <div className="flex gap-3">
+                      {project.links.map((link, i) => (
+                        <a 
+                          key={i} 
+                          href={link.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                        >
+                          <FileText className="w-3.5 h-3.5" />
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </div>
