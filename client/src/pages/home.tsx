@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Mail, 
-  MapPin, 
+import {
+  Github,
+  Mail,
+  MapPin,
   ChevronRight,
   ChevronLeft,
   Menu,
@@ -87,7 +87,7 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
 
   const scrollToSection = (id: string) => {
     if (id === "resume") {
-      window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767478059587.pdf", "_blank");
+      window.open("/resume.pdf", "_blank");
       if (onItemClick) onItemClick();
       return;
     }
@@ -143,12 +143,11 @@ const DotNavigation = ({ activeSection }: { activeSection: string }) => {
           <span className="absolute right-8 px-2 py-1 rounded bg-slate-900 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {section.label}
           </span>
-          <div 
-            className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${
-              activeSection === section.id 
-                ? "bg-primary border-primary scale-125 shadow-[0_0_15px_rgba(0,109,119,0.6)]" 
+          <div
+            className={`w-4 h-4 rounded-full transition-all duration-300 border-2 ${activeSection === section.id
+                ? "bg-primary border-primary scale-125 shadow-[0_0_15px_rgba(0,109,119,0.6)]"
                 : "bg-slate-700 border-transparent hover:bg-slate-600 hover:scale-110"
-            }`}
+              }`}
           />
         </button>
       ))}
@@ -159,119 +158,119 @@ const DotNavigation = ({ activeSection }: { activeSection: string }) => {
 // --- Content Sections Content ---
 
 const AboutSectionContent = () => (
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-    >
-      <h2 className="text-3xl font-bold mb-8 text-white">About Me</h2>
-      <div className="grid md:grid-cols-2 gap-12 items-center text-slate-300">
-        <div className="prose dark:prose-invert prose-slate max-w-2xl leading-relaxed text-xl font-medium order-1 md:order-1 py-2">
-          <p>
-            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to change our future. I see AI as a tool for discovering solutions to humanity's problems. My journey is driven by the pursuit of knowledge, bridging the gap between raw code and real-world impact to create technology that fosters change.
-          </p>
-        </div>
-        <div className="prose dark:prose-invert prose-slate max-w-none leading-relaxed text-lg md:text-xl font-bold order-2 md:order-2 italic border-r-4 border-primary pr-10 pl-6 py-6 bg-slate-900/50 rounded-l-xl text-right flex items-center justify-end min-h-[150px] w-full md:w-[calc(100%+8rem)] relative md:left-[8rem] -translate-y-[90px]">
-          <p className="m-0">
-            "AI will open up new ways of doing things that we cannot even imagine today."<br/>
-            <span className="text-lg font-medium text-slate-500 block mt-4">– Sundar Pichai</span>
-          </p>
-        </div>
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={fadeIn}
+  >
+    <h2 className="text-3xl font-bold mb-8 text-white">About Me</h2>
+    <div className="grid md:grid-cols-2 gap-12 items-center text-slate-300">
+      <div className="prose dark:prose-invert prose-slate max-w-2xl leading-relaxed text-xl font-medium order-1 md:order-1 py-2">
+        <p>
+          Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to change our future. I see AI as a tool for discovering solutions to humanity's problems. My journey is driven by the pursuit of knowledge, bridging the gap between raw code and real-world impact to create technology that fosters change.
+        </p>
       </div>
-    </motion.div>
+      <div className="prose dark:prose-invert prose-slate max-w-none leading-relaxed text-lg md:text-xl font-bold order-2 md:order-2 italic border-r-4 border-primary pr-10 pl-6 py-6 bg-slate-900/50 rounded-l-xl text-right flex items-center justify-end min-h-[150px] w-full md:w-[calc(100%+8rem)] relative md:left-[8rem] -translate-y-[90px]">
+        <p className="m-0">
+          "AI will open up new ways of doing things that we cannot even imagine today."<br />
+          <span className="text-lg font-medium text-slate-500 block mt-4">– Sundar Pichai</span>
+        </p>
+      </div>
+    </div>
+  </motion.div>
 );
 
 const AcademicsSectionContent = () => (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={staggerContainer}
-    >
-      <h2 className="text-3xl font-bold mb-8 text-white">Academics</h2>
-      
-      <div className="grid gap-8">
-        <motion.div variants={fadeIn}>
-          <div className="flex justify-between items-start mb-2 text-slate-300">
-            <div>
-              <h3 className="text-xl font-semibold text-white">Walnut Hills High School</h3>
-              <p className="text-slate-500">Class of 2027</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <Card className="bg-slate-900/50 border-slate-800">
-              <CardContent className="pt-6">
-                <h4 className="font-semibold mb-3 text-slate-300">GPA</h4>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Unweighted</span>
-                    <span className="font-mono font-medium text-white">3.9 / 4.0</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-400">Weighted</span>
-                    <span className="font-mono font-medium text-white">5.3</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={staggerContainer}
+  >
+    <h2 className="text-3xl font-bold mb-8 text-white">Academics</h2>
 
-            <Card className="bg-slate-900/50 border-slate-800">
-              <CardContent className="pt-6">
-                <h4 className="font-semibold mb-3 text-slate-300">SAT Score</h4>
-                <div className="space-y-1">
-                  <div className="flex justify-between text-sm items-center">
-                    <span className="text-slate-300 font-semibold">Total</span>
-                    <span className="font-mono font-bold text-lg text-primary">1520</span>
-                  </div>
-                  <div className="flex justify-between text-xs text-slate-500 pt-1 border-t border-slate-800">
-                    <span>Math: 780</span>
-                    <span>Reading: 740</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+    <div className="grid gap-8">
+      <motion.div variants={fadeIn}>
+        <div className="flex justify-between items-start mb-2 text-slate-300">
+          <div>
+            <h3 className="text-xl font-semibold text-white">Walnut Hills High School</h3>
+            <p className="text-slate-500">Class of 2027</p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div variants={fadeIn}>
-          <h3 className="text-lg font-semibold mb-4 text-white">Coursework</h3>
-          <div className="space-y-6">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">AP Courses</span>
-                <Separator className="flex-1 bg-slate-800" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <Card className="bg-slate-900/50 border-slate-800">
+            <CardContent className="pt-6">
+              <h4 className="font-semibold mb-3 text-slate-300">GPA</h4>
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-slate-400">Unweighted</span>
+                  <span className="font-mono font-medium text-white">3.9 / 4.0</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-slate-400">Weighted</span>
+                  <span className="font-mono font-medium text-white">5.3</span>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {["Chemistry", "Biology", "Calculus BC", "Computer Science A", "Research", "U.S. History"].map(course => (
-                  <Badge key={course} variant="secondary" className="bg-slate-900 border border-slate-800 font-normal text-slate-300">
-                    {course}
-                  </Badge>
-                ))}
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-900/50 border-slate-800">
+            <CardContent className="pt-6">
+              <h4 className="font-semibold mb-3 text-slate-300">SAT Score</h4>
+              <div className="space-y-1">
+                <div className="flex justify-between text-sm items-center">
+                  <span className="text-slate-300 font-semibold">Total</span>
+                  <span className="font-mono font-bold text-lg text-primary">1520</span>
+                </div>
+                <div className="flex justify-between text-xs text-slate-500 pt-1 border-t border-slate-800">
+                  <span>Math: 780</span>
+                  <span>Reading: 740</span>
+                </div>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+      </motion.div>
+
+      <motion.div variants={fadeIn}>
+        <h3 className="text-lg font-semibold mb-4 text-white">Coursework</h3>
+        <div className="space-y-6">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">AP Courses</span>
+              <Separator className="flex-1 bg-slate-800" />
             </div>
-            
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Dual Enrollment</span>
-                <Separator className="flex-1 bg-slate-800" />
+            <div className="flex flex-wrap gap-2">
+              {["Chemistry", "Biology", "Calculus BC", "Computer Science A", "Research", "U.S. History"].map(course => (
+                <Badge key={course} variant="secondary" className="bg-slate-900 border border-slate-800 font-normal text-slate-300">
+                  {course}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Dual Enrollment</span>
+              <Separator className="flex-1 bg-slate-800" />
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-slate-900/50 p-3 rounded-md border border-slate-800">
+                <p className="text-xs text-primary font-semibold mb-1">Ohio State University</p>
+                <p className="text-sm text-slate-300">Multivariable Calculus, Family Financial Management</p>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 p-3 rounded-md border border-slate-800">
-                   <p className="text-xs text-primary font-semibold mb-1">Ohio State University</p>
-                   <p className="text-sm text-slate-300">Multivariable Calculus, Family Financial Management</p>
-                </div>
-                <div className="bg-slate-900/50 p-3 rounded-md border border-slate-800">
-                   <p className="text-xs text-primary font-semibold mb-1">University of Cincinnati</p>
-                   <p className="text-sm text-slate-300">Statistics 1031, 19th Century Music, Nutrition 101</p>
-                </div>
+              <div className="bg-slate-900/50 p-3 rounded-md border border-slate-800">
+                <p className="text-xs text-primary font-semibold mb-1">University of Cincinnati</p>
+                <p className="text-sm text-slate-300">Statistics 1031, 19th Century Music, Nutrition 101</p>
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
-    </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  </motion.div>
 );
 
 const ProjectsSectionContent = () => {
@@ -283,7 +282,7 @@ const ProjectsSectionContent = () => {
       tech: ["Transformers", "NLP", "Computer Vision"],
       context: "UC AI Research Internship",
       links: [
-        { name: "Research Poster", url: "/attached_assets/ExLAI_Poster_1767478014572.pdf" }
+        { name: "Research Poster", url: "/poster.pdf" }
       ]
     },
     {
@@ -309,7 +308,7 @@ const ProjectsSectionContent = () => {
       const currentScroll = container.scrollLeft;
       const currentIndex = Math.round(currentScroll / scrollAmount);
       const totalSlides = projects.length;
-      
+
       let targetScroll;
       if (direction === 'left') {
         if (currentIndex === 0) {
@@ -334,92 +333,92 @@ const ProjectsSectionContent = () => {
 
   return (
     <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="relative w-full"
-      >
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-white">Projects</h2>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll('left')}
-              className="rounded-full border-slate-800 text-slate-300 hover:bg-slate-800"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => scroll('right')}
-              className="rounded-full border-slate-800 text-slate-300 hover:bg-slate-800"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
-          </div>
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={staggerContainer}
+      className="relative w-full"
+    >
+      <div className="flex items-center justify-between mb-8">
+        <h2 className="text-3xl font-bold text-white">Projects</h2>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll('left')}
+            className="rounded-full border-slate-800 text-slate-300 hover:bg-slate-800"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => scroll('right')}
+            className="rounded-full border-slate-800 text-slate-300 hover:bg-slate-800"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </Button>
         </div>
+      </div>
 
-        <div 
-          id="projects-container"
-          className="flex overflow-x-hidden gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {projects.map((project, index) => (
-            <motion.div 
-              key={index} 
-              variants={fadeIn}
-              className="w-full snap-center flex-shrink-0"
-            >
-              <div className="max-w-[700px] h-full">
-                <Card className="h-full border-slate-800 bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
-                  <CardHeader className="flex-shrink-0">
-                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
-                      <CardTitle className="text-2xl font-bold text-white break-words leading-tight max-w-xl">{project.title}</CardTitle>
-                      <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1 border-slate-700 text-slate-400">{project.context}</Badge>
-                    </div>
-                    <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg">{project.role}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-3">
-                      {project.tech.map(t => (
-                        <span key={t} className="text-xs font-mono text-slate-500 bg-slate-950 border border-slate-800 px-3 py-1 rounded shadow-sm">
-                          {t}
-                        </span>
+      <div
+        id="projects-container"
+        className="flex overflow-x-hidden gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            variants={fadeIn}
+            className="w-full snap-center flex-shrink-0"
+          >
+            <div className="max-w-[700px] h-full">
+              <Card className="h-full border-slate-800 bg-slate-900/50 hover:border-primary transition-colors flex flex-col">
+                <CardHeader className="flex-shrink-0">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-2">
+                    <CardTitle className="text-2xl font-bold text-white break-words leading-tight max-w-xl">{project.title}</CardTitle>
+                    <Badge variant="outline" className="text-xs font-normal self-start whitespace-nowrap px-3 py-1 border-slate-700 text-slate-400">{project.context}</Badge>
+                  </div>
+                  <CardDescription className="text-base font-medium text-primary leading-snug max-w-lg">{project.role}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-2xl">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    {project.tech.map(t => (
+                      <span key={t} className="text-xs font-mono text-slate-500 bg-slate-950 border border-slate-800 px-3 py-1 rounded shadow-sm">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="mt-auto border-t border-slate-800 pt-6">
+                  {project.links && (
+                    <div className="flex gap-6">
+                      {project.links.map((link, i) => (
+                        <a
+                          key={i}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group"
+                        >
+                          <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
+                          {link.name}
+                        </a>
                       ))}
                     </div>
-                  </CardContent>
-                  <CardFooter className="mt-auto border-t border-slate-800 pt-6">
-                    {project.links && (
-                      <div className="flex gap-6">
-                        {project.links.map((link, i) => (
-                          <a 
-                            key={i} 
-                            href={link.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group"
-                          >
-                            <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
-                            {link.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </CardFooter>
-                </Card>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+                  )}
+                </CardFooter>
+              </Card>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   );
 };
 
@@ -449,7 +448,7 @@ const CommunitySectionContent = () => {
       const currentScroll = container.scrollLeft;
       const currentIndex = Math.round(currentScroll / scrollAmount);
       const totalSlides = communityData.length;
-      
+
       let targetScroll;
       if (direction === 'left') {
         if (currentIndex === 0) {
@@ -503,14 +502,14 @@ const CommunitySectionContent = () => {
           </Button>
         </div>
       </div>
-      
-      <div 
+
+      <div
         id="community-container"
         className="flex overflow-x-hidden gap-8 pb-8 snap-x snap-mandatory scrollbar-none px-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {communityData.map((item, i) => (
-          <motion.div 
-            key={i} 
+          <motion.div
+            key={i}
             variants={fadeIn}
             className="w-full snap-center flex-shrink-0"
           >
@@ -561,103 +560,103 @@ const ContactSectionContent = () => {
   }
 
   return (
-       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-      >
-        <div className="bg-slate-900/50 rounded-xl overflow-hidden border border-slate-800 shadow-sm">
-          <div className="grid md:grid-cols-2">
-            {/* Left Column: Info */}
-            <div className="p-8 md:p-12 bg-slate-950/50 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col justify-between">
-              <div>
-                <h2 className="text-3xl font-bold mb-4 text-white">Contact</h2>
-                <p className="text-slate-400 mb-8 leading-relaxed">
-                  Have a project in mind? My inbox is always open for new opportunities.
-                </p>
-                
-                <div className="space-y-6">
-                  <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
-                    <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800 group-hover:border-primary/50 transition-colors">
-                      <Github className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium">SamarthKhandelwal-create</span>
-                  </a>
-                  
-                  <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
-                    <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800 group-hover:border-primary/50 transition-colors">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium">skhandelwal1324@gmail.com</span>
-                  </a>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+    >
+      <div className="bg-slate-900/50 rounded-xl overflow-hidden border border-slate-800 shadow-sm">
+        <div className="grid md:grid-cols-2">
+          {/* Left Column: Info */}
+          <div className="p-8 md:p-12 bg-slate-950/50 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col justify-between">
+            <div>
+              <h2 className="text-3xl font-bold mb-4 text-white">Contact</h2>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                Have a project in mind? My inbox is always open for new opportunities.
+              </p>
 
-                  <div className="flex items-center gap-4 text-slate-400 group">
-                    <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium">513-953-6153</span>
+              <div className="space-y-6">
+                <a href="https://github.com/SamarthKhandelwal-create" target="_blank" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                  <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800 group-hover:border-primary/50 transition-colors">
+                    <Github className="w-5 h-5" />
                   </div>
+                  <span className="font-medium">SamarthKhandelwal-create</span>
+                </a>
+
+                <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                  <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800 group-hover:border-primary/50 transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span className="font-medium">skhandelwal1324@gmail.com</span>
+                </a>
+
+                <div className="flex items-center gap-4 text-slate-400 group">
+                  <div className="p-3 bg-slate-900 rounded-lg shadow-sm border border-slate-800">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <span className="font-medium">513-953-6153</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Right Column: Form */}
-            <div className="p-8 md:p-12 bg-slate-900/50">
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-slate-300">Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="you@example.com" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-slate-300">Subject</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Project Inquiry" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-slate-300">Message</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Tell me about your project..." 
-                            className="resize-none min-h-[120px] bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-medium">
-                    Send Message
-                  </Button>
-                </form>
-              </Form>
-            </div>
+          {/* Right Column: Form */}
+          <div className="p-8 md:p-12 bg-slate-900/50">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-slate-300">Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="you@example.com" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-slate-300">Subject</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Project Inquiry" {...field} className="bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-slate-300">Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell me about your project..."
+                          className="resize-none min-h-[120px] bg-slate-950/50 border-slate-800 focus-visible:ring-primary text-white"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-medium">
+                  Send Message
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
   );
 };
 
@@ -692,14 +691,14 @@ export default function Home() {
       <AnimatedBackground />
       <DotNavigation activeSection={activeSection} />
       <div className="max-w-7xl mx-auto bg-slate-900/40 backdrop-blur-[4px] border-x border-slate-800/50 min-h-screen flex flex-col shadow-2xl shadow-black/50">
-        
+
         {/* Top Header Section */}
         <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 px-6 md:px-12 py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex flex-col">
               <h1 className="text-xl md:text-2xl font-bold tracking-tight text-white">Samarth Khandelwal</h1>
             </div>
-            
+
             <div className="hidden lg:block">
               <Navigation />
             </div>
@@ -716,7 +715,7 @@ export default function Home() {
                     <div className="mb-8">
                       <h2 className="text-xl font-bold text-white">Samarth Khandelwal</h2>
                     </div>
-                    <Navigation mobile onItemClick={() => {}} />
+                    <Navigation mobile onItemClick={() => { }} />
                   </div>
                 </SheetContent>
               </Sheet>
@@ -733,17 +732,17 @@ export default function Home() {
               Motivated and detail-oriented high school student seeking opportunities to deepen expertise in engineering, AI, and computer science development.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
-              <Button 
+              <Button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                size="lg" 
+                size="lg"
                 className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 shadow-lg shadow-primary/20"
               >
                 Contact Me
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                size="lg" 
+                size="lg"
                 className="rounded-full px-8 border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white transition-all"
               >
                 Learn More
@@ -775,7 +774,7 @@ export default function Home() {
           <section id="about" className="max-w-3xl snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AboutSectionContent />
           </section>
-          
+
           <section id="academics" className="max-w-3xl border-t border-slate-800/50 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AcademicsSectionContent />
           </section>
@@ -791,7 +790,7 @@ export default function Home() {
           <section id="contact" className="border-t border-slate-800/50 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <ContactSectionContent />
           </section>
-          
+
           <footer className="py-8 text-center text-slate-600 text-sm border-t border-slate-800/50 snap-end">
           </footer>
         </main>
