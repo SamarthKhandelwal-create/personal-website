@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Github, 
   Mail, 
@@ -86,6 +86,48 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
         </button>
       ))}
     </nav>
+  );
+};
+
+const DotNavigation = ({ activeSection }: { activeSection: string }) => {
+  const sections = [
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "academics", label: "Academics" },
+    { id: "projects", label: "Projects" },
+    { id: "community", label: "Community" },
+    { id: "contact", label: "Contact" },
+  ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-4">
+      {sections.map((section) => (
+        <button
+          key={section.id}
+          onClick={() => scrollToSection(section.id)}
+          className="group relative flex items-center"
+          aria-label={`Scroll to ${section.label}`}
+        >
+          <span className="absolute right-8 px-2 py-1 rounded bg-slate-900 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            {section.label}
+          </span>
+          <div 
+            className={`w-3 h-3 rounded-full transition-all duration-300 border-2 ${
+              activeSection === section.id 
+                ? "bg-primary border-primary scale-125 shadow-[0_0_10px_rgba(0,109,119,0.5)]" 
+                : "bg-slate-300 dark:bg-slate-700 border-transparent hover:bg-slate-400 dark:hover:bg-slate-600"
+            }`}
+          />
+        </button>
+      ))}
+    </div>
   );
 };
 
@@ -475,8 +517,32 @@ const ContactSectionContent = () => {
 // --- Main Page Component ---
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = ["hero", "about", "academics", "projects", "community", "contact"];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="h-screen bg-slate-50/50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans selection:bg-primary/20 selection:text-primary overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      <DotNavigation activeSection={activeSection} />
       <div className="max-w-7xl mx-auto bg-white dark:bg-slate-950 shadow-2xl shadow-slate-200/50 dark:shadow-none min-h-screen flex flex-col">
         
         {/* Top Header Section */}
@@ -511,7 +577,7 @@ export default function Home() {
         </header>
 
         {/* Hero Info Section */}
-        <section className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
+        <section id="hero" className="px-6 md:px-12 lg:px-20 py-12 md:py-20 bg-slate-50/50 dark:bg-slate-900/20 border-b border-slate-100 dark:border-slate-900 flex-shrink-0 snap-start min-h-screen flex flex-col justify-center">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">High School Student focused on Engineering, Computer Science, and AI.</h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
