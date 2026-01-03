@@ -283,7 +283,7 @@ const ProjectsSectionContent = () => {
       role: "Developer",
       description: "EagleVision utilizes a phone attached to a microscope to broadcast a camera feed to a web-based interface. In this system, teachers act as hosts who create sessions with unique codes to share the live feed with students, allowing for interactive features such as image annotation, snapshots, and session management. This application assists in microscope use in schools with resource limitations, allowing for one microscope to be used by multiple students at a time.",
       tech: ["WebRTC", "JavaScript", "HTML"],
-      context: "Programming Team Competition"
+      context: "Programming Team"
     }
   ];
 
