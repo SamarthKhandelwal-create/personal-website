@@ -147,7 +147,7 @@ const AboutSectionContent = () => (
             Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
           </p>
         </div>
-        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-2xl md:text-3xl font-bold order-2 md:order-2 italic border-l-4 border-primary pl-10 py-8 bg-slate-50 dark:bg-slate-900/50 rounded-r-xl text-center flex items-center justify-center min-h-[200px] ml-auto">
+        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-2xl md:text-3xl font-bold order-2 md:order-2 italic border-l-4 border-primary pl-10 py-8 bg-slate-50 dark:bg-slate-900/50 rounded-r-xl text-center flex items-center justify-center min-h-[200px] w-full md:w-[calc(100%+400px)] relative md:left-[200px]">
           <p className="m-0">
             "AI will open up new ways of doing things that we cannot even imagine today."<br/>
             <span className="text-lg font-medium text-slate-500 block mt-4">– Sundar Pichai</span>
