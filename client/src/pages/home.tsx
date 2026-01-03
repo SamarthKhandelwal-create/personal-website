@@ -283,7 +283,7 @@ const ProjectsSectionContent = () => {
       tech: ["Transformers", "NLP", "Computer Vision"],
       context: "UC AI Research Internship",
       links: [
-        { name: "Research Poster", url: "/attached_assets/ExLAI_Poster_1767460245154.pdf" }
+        { name: "Research Poster", url: "/attached_assets/ExLAI_Poster_1767478014572.pdf" }
       ]
     },
     {
