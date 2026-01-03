@@ -264,7 +264,7 @@ const ProjectsSectionContent = () => {
     {
       title: "CrisisAnalyzer: Multimodal Disaster Summarization",
       role: "Research Project Team Lead",
-      description: "Led a team developing a multimodal AI system that processes real-time social media data to generate concise summaries for emergency responders.",
+      description: "Directed a 7-person team to develop a transformer-based model analyzing social media data to optimize emergency service responses. Utilized data from the Crisis Multimodal Dataset and prompt engineering to build a model that provided actionable summaries. Presented project findings to faculty from UC and regional universities during a competitive poster session. Earned the \"Most Impactful Research Project\" award and the \"Leadership Prestige\" award.",
       tech: ["Transformers", "NLP", "Computer Vision"],
       awards: ["Most Impactful Research Project (1st of 6 teams)", "Leadership Prestige Award"],
       context: "UC AI Research Internship",
@@ -273,16 +273,16 @@ const ProjectsSectionContent = () => {
       ]
     },
     {
-      title: "Glioblastoma Research: ceRNA Networks via RGCN",
+      title: "Deep Learning Prediction of Glioblastoma miRNAs via RGCN",
       role: "Principal Investigator",
-      description: "Investigating if Relational Graph Convolutional Networks (RGCN) can model miRNA-lncRNA-mRNA networks in Glioblastoma to identify master regulators and treatment targets.",
+      description: "Developing a model to predict microRNA (miRNA) regulators implicated in Glioblastoma by engineering a multiomics network from public databases and applying bioinformatics methods to train a relational graph convolutional network model. Targeting submission to the Great Lakes Bioinformatics Conference as a conference paper, as well as ISEF and the Ohio Society of Science.",
       tech: ["Graph ML", "PyTorch Geometric", "Deep Learning", "Bioinformatics"],
       context: "AP Research Project"
     },
     {
-      title: "EagleVision: Live Microscope Web Session",
+      title: "EagleVision",
       role: "Developer",
-      description: "A web app allowing teachers to stream a phone-mounted microscope feed to student devices with real-time pan/zoom and annotation features.",
+      description: "EagleVision utilizes a phone attached to a microscope to broadcast a camera feed to a web-based interface. In this system, teachers act as hosts who create sessions with unique codes to share the live feed with students, allowing for interactive features such as image annotation, snapshots, and session management. This application assists in microscope use in schools with resource limitations, allowing for one microscope to be used by multiple students at a time.",
       tech: ["WebRTC", "JavaScript", "HTML"],
       context: "Programming Club Competition"
     }
