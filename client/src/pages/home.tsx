@@ -144,12 +144,12 @@ const AboutSectionContent = () => (
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg order-2 md:order-1">
           <p>
-            I excel in transforming complex problems into small, workable parts. I've always gravitated towards challenges and breaking boundaries of what people think to be possible. My self-directed approach empowers me to quickly grasp new technologies and adapt to changing environments.
+            I view AI as the ultimate tool for decoding complexity. I am driven by the challenge of applying computational thinking to unstructured problems. My work is defined by rapid adaptation—constantly learning new frameworks and methodologies to push the boundaries of how we can use technology to improve the human experience.
           </p>
         </div>
         <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-2 border-l-4 border-primary pl-6 py-2 bg-slate-50 dark:bg-slate-900/50 rounded-r-lg">
           <p>
-            Hi, I'm Samarth, a high schooler fascinated by AI and its potential to change the world.
+            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
           </p>
         </div>
       </div>
@@ -242,7 +242,7 @@ const AcademicsSectionContent = () => (
                 </div>
                 <div className="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-md border border-slate-100 dark:border-slate-800">
                    <p className="text-xs text-primary font-semibold mb-1">Ohio State University</p>
-                   <p className="text-sm text-slate-700 dark:text-slate-300">Family Financial Management</p>
+                   <p className="text-sm text-slate-700 dark:text-slate-300">Family Financial Management, Multivariable Calculus</p>
                 </div>
               </div>
             </div>
