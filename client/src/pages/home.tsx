@@ -61,6 +61,11 @@ const Navigation = ({ mobile = false, onItemClick }: { mobile?: boolean, onItemC
   ];
 
   const scrollToSection = (id: string) => {
+    if (id === "resume") {
+      window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767460225537.pdf", "_blank");
+      if (onItemClick) onItemClick();
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -503,31 +508,6 @@ const ContactSection = () => {
   );
 };
 
-const ResumeSection = () => (
-  <section id="resume" className="py-24 border-t border-slate-100 dark:border-slate-800">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeIn}
-      className="text-center"
-    >
-      <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-50">Resume</h2>
-      <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
-        Interested in learning more about my experience and skills? Download my full resume below.
-      </p>
-      <Button 
-        size="lg" 
-        className="gap-2 bg-slate-900 hover:bg-slate-800 text-white px-8"
-        onClick={() => window.open("/attached_assets/Khandelwal_Samarth_Resume_updated_(10_21_25)_(1)_1767460225537.pdf", "_blank")}
-      >
-        <Download className="w-5 h-5" />
-        Download Resume
-      </Button>
-    </motion.div>
-  </section>
-);
-
 
 // --- Main Page Component ---
 
@@ -602,7 +582,6 @@ export default function Home() {
           <ProjectsSection />
           <CommunitySection />
           <ContactSection />
-          <ResumeSection />
           
           <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-100 dark:border-slate-800 mt-12">
             <p>© {new Date().getFullYear()} Samarth Khandelwal. All rights reserved.</p>
