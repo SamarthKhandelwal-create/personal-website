@@ -1,0 +1,177 @@
+Here is the updated prompt. I have refined the Contact section to strictly follow the layout and functionality of your reference image (Split view: Info left, Form right) but instructed the agent to re-skin it to match the clean, academic theme of the rest of the site (removing the neon/black "hacker" colors in favor of your professional palette).
+
+Prompt for AI Agent
+Role: Senior Front-End Engineer & UX Designer Objective: Build a personal portfolio website for Samarth Khandelwal. Tech Stack: Next.js (App Router), Tailwind CSS, Framer Motion, Lucide React (Icons).
+
+Design Philosophy (Global):
+
+Vibe: Clean, Modern, Academic, and Professional.
+
+Color Palette: Slate/Zinc grays, clean white background, and a deep academic blue or teal accent. Do NOT use the high-contrast neon/black terminal aesthetic from the reference images.
+
+Typography: Inter or Geist Sans.
+
+Navigation/Section Order: (Do not number these in the UI, but follow this flow)
+
+About
+
+Academics
+
+Projects
+
+Community Outreach
+
+Contact (Special Layout Instructions Below)
+
+Resume (CTA Button)
+
+Content & Section Specifics
+1. Sidebar / Hero Info
+
+Name: Samarth Khandelwal 
++1
+
+
+Headline: High School Student focused on Engineering, Computer Science, and AI. 
+
+
+Sub-text: Building transformer models for disaster relief and applying deep learning to bioinformatics. 
++2
+
+
+Location: West Chester, OH 
++1
+
+2. Section: About
+
+Bio: "I am a motivated and detail-oriented high school student with a passion for engineering, computer science, and AI development. I have experience applying advanced concepts, such as transformer models, to real-world challenges like social media analysis for emergency response. Recognized for leadership and impact, I have contributed to raising over $75,000 for cancer research and earned awards in national engineering competitions. I am currently seeking opportunities to deepen my expertise in AI, data science, and engineering innovation." 
+
+3. Section: Academics
+
+School: Walnut Hills High School (Class of 2027). 
+
+Stats:
+
+GPA: 3.9/4.0 (Unweighted), 5.3 (Weighted). 
+
+SAT: 1520 (Math: 780, Reading: 740). 
+
+Coursework:
+
+
+AP Courses: Chemistry, Biology, Calculus BC, Computer Science A, Research, U.S. History. 
++1
+
+
+Dual Enrollment (University of Cincinnati): Statistics 1031, 19th Century Music, Nutrition 101. 
+
+
+Dual Enrollment (Ohio State University): Family Financial Management. 
++1
+
+
+Honors: AP Scholar with Honors. 
+
+4. Section: Projects
+Display as detailed cards.
+
+
+CrisisAnalyzer: Multimodal Disaster Summarization 
+
+
+Role: Research Project Team Lead (UC AI Research Internship). 
+
+
+Description: Led a team developing a multimodal AI system that processes real-time social media data to generate concise summaries for emergency responders. 
+
+
+Tech: Transformers, NLP, Computer Vision, GPT-4o mini, BERTScore 0.78. 
+
+
+Awards: "Most Impactful Research Project" (1st of 6 teams) and "Leadership Prestige" Award. 
+
+
+Glioblastoma Research: ceRNA Networks via RGCN 
++1
+
+
+Context: AP Research Project. 
++1
+
+
+Description: Investigating if Relational Graph Convolutional Networks (RGCN) can model miRNA-lncRNA-mRNA networks in Glioblastoma to identify master regulators and treatment targets. 
++1
+
+
+Tech: Graph ML, PyTorch Geometric, GNNExplainer, Bioinformatics. 
+
+
+EagleVision: Live Microscope Web Session 
+
+
+Context: Programming Club Competition. 
+
+
+Description: A web app allowing teachers to stream a phone-mounted microscope feed to student devices with real-time pan/zoom and annotation features. 
+
+5. Section: Community Outreach
+Display as a timeline or list.
+
+
+Lakota Robotics FRC Team 1038 (Autonomous Lead) 
+
+Program robot control systems in Java; led team to World Championship qualifications and won Regional FIRST Impact Award. 
+
+
+Ohio Attorney General's Teen Ambassador Board (Group Lead) 
++1
+
+Leading a statewide committee to advise on AI ethics in secondary education and drafting policy recommendations. 
++1
+
+
+Leukemia & Lymphoma Society (Social Media Manager) 
+
+Co-managed a campaign raising over $75,000 for cancer research. 
+
+
+Kumon Math & Reading Center (Center Assistant/Volunteer) 
+
+Managed center operations and volunteered 350+ hours assisting students. 
+
+6. Section: Contact (Special Instructions)
+Layout: Replicate the functionality and layout of the reference image exactly (Split view), but adapt the styling to the academic theme (remove neon/black, use slate/white).
+
+Left Column (Info):
+
+Header: "Contact"
+
+Subtext: "Have a project in mind? My inbox is always open for new opportunities."
+
+Social Links (Use Icons):
+
+
+GitHub: SamarthKhandelwal-create 
+
+
+Email: skhandelwal1324@gmail.com 
+
+
+Phone: 513-953-6153 
+
+Right Column (Form):
+
+Create a working form UI with the following fields:
+
+Email (Input)
+
+Subject (Input)
+
+Message (Textarea)
+
+Submit Button (Solid color, academic blue/teal).
+
+Note: Ensure the inputs have a clean border style (e.g., border-gray-300 or border-zinc-700 in dark mode) rather than the terminal style.
+
+7. Section: Resume
+Create a prominent CTA button labeled "Download Resume" that links to a PDF asset.
