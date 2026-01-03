@@ -291,15 +291,23 @@ const ProjectsSectionContent = () => {
     const container = document.getElementById('projects-container');
     if (container) {
       const scrollAmount = container.clientWidth;
-      
       const currentScroll = container.scrollLeft;
       const currentIndex = Math.round(currentScroll / scrollAmount);
+      const totalSlides = projects.length;
       
       let targetScroll;
       if (direction === 'left') {
-        targetScroll = (currentIndex - 1) * scrollAmount;
+        if (currentIndex === 0) {
+          targetScroll = (totalSlides - 1) * scrollAmount;
+        } else {
+          targetScroll = (currentIndex - 1) * scrollAmount;
+        }
       } else {
-        targetScroll = (currentIndex + 1) * scrollAmount;
+        if (currentIndex === totalSlides - 1) {
+          targetScroll = 0;
+        } else {
+          targetScroll = (currentIndex + 1) * scrollAmount;
+        }
       }
 
       container.scrollTo({
@@ -430,12 +438,21 @@ const CommunitySectionContent = () => {
       const scrollAmount = container.clientWidth;
       const currentScroll = container.scrollLeft;
       const currentIndex = Math.round(currentScroll / scrollAmount);
+      const totalSlides = communityData.length;
       
       let targetScroll;
       if (direction === 'left') {
-        targetScroll = (currentIndex - 1) * scrollAmount;
+        if (currentIndex === 0) {
+          targetScroll = (totalSlides - 1) * scrollAmount;
+        } else {
+          targetScroll = (currentIndex - 1) * scrollAmount;
+        }
       } else {
-        targetScroll = (currentIndex + 1) * scrollAmount;
+        if (currentIndex === totalSlides - 1) {
+          targetScroll = 0;
+        } else {
+          targetScroll = (currentIndex + 1) * scrollAmount;
+        }
       }
 
       container.scrollTo({
