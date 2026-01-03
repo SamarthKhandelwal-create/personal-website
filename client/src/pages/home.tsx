@@ -709,10 +709,8 @@ export default function Home() {
             <AcademicsSectionContent />
           </section>
 
-          <section id="projects" className="max-w-full border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
-            <div className="max-w-3xl mx-auto w-full">
-              <ProjectsSectionContent />
-            </div>
+          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
+            <ProjectsSectionContent />
           </section>
 
           <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
