@@ -141,13 +141,17 @@ const AboutSectionContent = () => (
       variants={fadeIn}
     >
       <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">About Me</h2>
-      <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-        <p className="mb-6">
-          I am a <span className="font-medium text-primary">Aspiring AI Engineer</span>. I have experience applying advanced concepts, such as transformer models, to real-world challenges like social media analysis for emergency response.
-        </p>
-        <p>
-          Highly motivated student aiming to build the next big ai tool. I have contributed to raising over <span className="font-medium text-slate-900 dark:text-white">$75,000 for cancer research</span> and earned awards in national engineering competitions. I am currently seeking opportunities to deepen my expertise and contribute to meaningful technological innovations.
-        </p>
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-600 dark:text-slate-300 leading-relaxed text-lg order-2 md:order-1">
+          <p>
+            I excel in transforming complex problems into small, workable parts. I've always gravitated towards challenges and breaking boundaries of what people think to be possible. My self-directed approach empowers me to quickly grasp new technologies and adapt to changing environments.
+          </p>
+        </div>
+        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-2 border-l-4 border-primary pl-6 py-2 bg-slate-50 dark:bg-slate-900/50 rounded-r-lg">
+          <p>
+            Hi, I'm Samarth, a high schooler fascinated by AI and its potential to change the world.
+          </p>
+        </div>
       </div>
     </motion.div>
 );
@@ -582,7 +586,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-extrabold mb-2 text-slate-900 dark:text-slate-50 tracking-tight">Samarth Khandelwal</h1>
             <p className="text-xl md:text-2xl font-semibold text-primary mb-6">Aspiring AI Engineer</p>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 leading-relaxed max-w-2xl">
-              Motivated and detail-oriented high school student seeking oppertuntities to deepen expertise in engineering, AI and computer science development.
+              Motivated and detail-oriented high school student seeking opportunities to deepen expertise in engineering, AI, and computer science development.
             </p>
             <div className="flex flex-wrap gap-4 mb-10">
               <Button 
@@ -604,7 +608,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-6 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                West Chester, OH
+                Cincinnati, OH
               </div>
               <a href="mailto:skhandelwal1324@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
@@ -624,23 +628,23 @@ export default function Home() {
 
         {/* Main Content Area */}
         <main className="flex-1 px-6 md:px-12 lg:px-20 bg-white dark:bg-slate-950">
-          <section id="about" className="max-w-3xl snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
+          <section id="about" className="max-w-3xl snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AboutSectionContent />
           </section>
           
-          <section id="academics" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
+          <section id="academics" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <AcademicsSectionContent />
           </section>
 
-          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
+          <section id="projects" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <ProjectsSectionContent />
           </section>
 
-          <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
+          <section id="community" className="max-w-3xl border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <CommunitySectionContent />
           </section>
 
-          <section id="contact" className="border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-20 min-h-screen flex flex-col justify-center py-16">
+          <section id="contact" className="border-t border-slate-100 dark:border-slate-800 snap-start scroll-mt-0 min-h-screen flex flex-col justify-center py-16">
             <ContactSectionContent />
           </section>
           
