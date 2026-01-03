@@ -142,9 +142,9 @@ const AboutSectionContent = () => (
     >
       <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-slate-50">About Me</h2>
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-1 pl-6 py-2">
+        <div className="prose dark:prose-invert prose-slate max-w-2xl text-slate-900 dark:text-slate-100 leading-relaxed text-xl font-medium order-1 md:order-1 py-2">
           <p>
-            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to reshape our future. While many see AI as just a buzzword, I see it as a powerful toolkit for unlocking solutions to humanity's most intricate problems. My journey is defined by a relentless pursuit of knowledge—bridging the gap between abstract algorithms and real-world impact to create technology that matters.
+            Hi, I'm Samarth. I’m a high school student driven by a deep curiosity for Artificial Intelligence and its capacity to change our future. I see AI as a tool for discovering solutions to humanity's problems. My journey is driven by the pursuit of knowledge, bridging the gap between raw code and real-world impact to create technology that fosters change.
           </p>
         </div>
         <div className="prose dark:prose-invert prose-slate max-w-none text-slate-900 dark:text-slate-100 leading-relaxed text-lg md:text-xl font-bold order-2 md:order-2 italic border-r-4 border-primary pr-10 pl-6 py-6 bg-slate-50 dark:bg-slate-900/50 rounded-l-xl text-right flex items-center justify-end min-h-[150px] w-full md:w-[calc(100%+8rem)] relative md:left-[8rem] -translate-y-[90px]">
